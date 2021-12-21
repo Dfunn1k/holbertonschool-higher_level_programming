@@ -4,6 +4,3 @@ def uppercase(str):
         code = ord(i) - 32
         print("{}".format(i if ord(i) < 97 else chr(code)), end="")
     print("")
-
-uppercase("best")
-uppercase("Best School 98 Battery street")
