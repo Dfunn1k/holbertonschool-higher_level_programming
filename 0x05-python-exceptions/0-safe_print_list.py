@@ -6,6 +6,7 @@ def safe_print_list(my_list=[], x=0):
             print("{}".format(my_list[i]), end="")
             count += 1
         print("")
-    except Exception:
+    except ValueError:
         pass
-    return count
+    finally:
+        return count
