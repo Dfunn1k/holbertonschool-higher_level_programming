@@ -9,9 +9,4 @@ class Square():
         Args:
             size (int): size of square
         """
-        self.size = size
-
-    @property
-    def size(self):
-        """return size"""
-        return self.__size
+        self.__size = size
