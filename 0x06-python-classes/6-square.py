@@ -41,7 +41,7 @@ class Square():
     @property
     def position(self):
         """Property to retrieve the position.
-        
+
         Property setter to set and check:
             * Position must be a tuple of 2 positive integers, otherwise raise
                 a TypeError
@@ -50,9 +50,9 @@ class Square():
 
     @position.setter
     def position(self, value):
-        if not isinstance(value, tuple)\
-        or not type(value[0]) is int \
-        or not type(value[1]) is int:
+        if not isinstance(value, tuple) or len(value) != 2 \
+           or not isinstance(value[0], int) or value[0] < 0 \
+           or not isinstance(value[1], int) or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
 
         self.__position = value
@@ -71,21 +71,22 @@ class Square():
         """Public instance method that prints in the stdout the square with the
         character '#'.
             * If size is equal to 0, print an empty line.
+            * position should be use by using space.
+            * Don’t fill lines by spaces when position[1] > 0.
 
             Args:
-                size = stored the size of instance
+                size (int): stored the size of instance
+                value (tuple): stored the values of position
         """
         size = self.__size
         value = self.__position
-        
+
         if size != 0:
             if value[1] > 0:
-                for i in range(0, size):
-                    print(f"{'#' * size}", end='')
-                    print("")
-            else:
-                for i in range(0, size):
-                    print(f"{' ' * value[0]}" + f"{'#' * size}", end='')
-                    print("")
+                for i in range(value[1]):
+                    print()
+            for i in range(0, size):
+                print(value[0] * ' ' + size * '#', end='')
+                print("")
         else:
             print("")
