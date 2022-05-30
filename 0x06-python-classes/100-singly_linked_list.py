@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""In this file, i will create class node for task 100"""
+"""Class Node"""
 
 
 class Node:
@@ -46,6 +46,9 @@ class Node:
             self.__next_node = value
         else:
             raise TypeError("next_node must be a Node object")
+
+
+"""class SIngle linked list"""
 
 
 class SingleLinkedList:
