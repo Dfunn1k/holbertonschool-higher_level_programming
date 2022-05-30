@@ -2,10 +2,6 @@
 """ in this file, i will create a empty class for square"""
 
 
-from turtle import pos, position
-from typing import Tuple
-
-
 class Square():
     """Define a square"""
 
