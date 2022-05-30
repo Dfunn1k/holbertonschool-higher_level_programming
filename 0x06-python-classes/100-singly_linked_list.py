@@ -6,7 +6,7 @@ class Node:
     """Define a node of a single linked list"""
 
     def __init__(self, data, next_node=None):
-        """Initializating data and next_node.
+        """Initializes data and next_node.
 
         Args:
             data (int): value that will be stored in a node.
@@ -48,18 +48,14 @@ class Node:
             raise TypeError("next_node must be a Node object")
 
 
-"""class SIngle linked list"""
+"""class single linked list"""
 
 
 class SingleLinkedList:
     """Define a Single Linked List"""
 
     def __init__(self):
-        """Initializating single linked list.
-
-        Args:
-            head (node): pointer to head of a SLL.
-        """
+        """Initializes single linked list"""
         self.__head = None
 
     def sorted_insert(self, value):
@@ -67,9 +63,8 @@ class SingleLinkedList:
 
         Args:
             value (int): value that will be stored in a node
-            node (node): Instance of the class Node
         """
-        node = Node(value, None)
+        node = Node(value)
         if self.__head is None:
             self.__head = node
         else:
@@ -84,9 +79,6 @@ class SingleLinkedList:
 
     def __str__(self):
         """show the single linked list when called.
-
-        Args:
-            sll (str): string where it will be stored the SLL
 
         Return:
             The string(sll)
