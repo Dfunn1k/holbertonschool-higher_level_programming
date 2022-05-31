@@ -9,6 +9,7 @@ class Square(Rectangle):
         """Instantiation with size."""
         Rectangle.integer_validator("size", size)
         self.__size = size
+        super().__init__(size, size)
 
     def area(self):
         """Public instance method for calculated area of square.
