@@ -1,37 +1,29 @@
 #!/usr/bin/python3
 """Load, add, save"""
 from sys import argv
-from os import path
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 
-def append_Args(argv):
+def append_Args(argv, list1=[]):
     """function that stores the arguments in a list except the first.
 
     Attributes:
-        listtmp (list) : here we will store the arguments.
-        lenght (int) : lenght of argv
+        lenght (int): lenght of argv
     Args:
-        argv (list) : Command line arguments
-    Return:
-        listtmp
+        argv (list): Command line arguments
+        list1 (list): List
     """
-    listtmp = []
     lenght = len(argv)
 
     for i in range(1, lenght):
-        listtmp.append(argv[i])
-
-    return listtmp
+        list1.append(argv[i])
 
 
-file_name = 'add_item.json'
+try:
+    jsonlist = load_from_json_file('add_item.json')
+except FileNotFoundError:
+    jsonlist = []
 
-if path.isfile(file_name):
-    list_convert = load_from_json_file(file_name)
-    list_convert += append_Args(argv)
-    save_to_json_file(list_convert, file_name)
-else:
-    list_convert = append_Args(argv)
-    save_to_json_file(list_convert, file_name)
+append_Args(argv, jsonlist)
+save_to_json_file(jsonlist, 'add_item.json')
