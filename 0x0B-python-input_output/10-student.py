@@ -18,6 +18,6 @@ class Student:
         for i in attrs:
             try:
                 new_dict[i] = self.__dict__[i]
-            except:
+            except Exception:
                 pass
         return new_dict
