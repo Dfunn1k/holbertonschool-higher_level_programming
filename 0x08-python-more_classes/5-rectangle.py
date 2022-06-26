@@ -93,4 +93,4 @@ class Rectangle:
     def __del__(self):
         """Method for eliminated an instance"""
         del self
-        print("Bye rectangle. . .")
+        print("Bye rectangle...")
