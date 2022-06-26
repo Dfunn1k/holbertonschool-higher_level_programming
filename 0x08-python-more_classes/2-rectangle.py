@@ -67,12 +67,3 @@ class Rectangle:
         if (self.width == 0) or (self.height == 0):
             return 0
         return (self.width + self.height) * 2
-
-my_rectangle = Rectangle(2, 4)
-print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
-
-print("--")
-
-my_rectangle.width = 10
-my_rectangle.height = 3
-print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
