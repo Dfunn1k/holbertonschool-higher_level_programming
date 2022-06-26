@@ -74,6 +74,8 @@ class Rectangle:
         Returns:
             String.
         """
+        if (self.width == 0) or (self.height == 0):
+            return ""
         list1 = []
 
         for x in range(0, self.height):
