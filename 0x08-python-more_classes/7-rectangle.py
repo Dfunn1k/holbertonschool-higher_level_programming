@@ -5,7 +5,7 @@
 class Rectangle:
     """define a Rectangle"""
     number_of_instances = 0
-    print_symbol = '#'
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Magic method for initializating with width and height.
@@ -84,7 +84,7 @@ class Rectangle:
 
         for x in range(0, self.height):
             for y in range(0, self.width):
-                list1.append(Rectangle.print_symbol)
+                list1.append(self.print_symbol)
             list1.append('\n')
         list1.pop()
 
