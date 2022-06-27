@@ -78,17 +78,17 @@ class Rectangle:
         Returns:
             String.
         """
+        strprint = ""
+
         if (self.width == 0) or (self.height == 0):
-            return ""
-        list1 = []
+            return strprint
 
         for x in range(0, self.height):
-            for y in range(0, self.width):
-                list1.append(self.print_symbol)
-            list1.append('\n')
-        list1.pop()
+            strprint += self.width * str(self.print_symbol)
+            if x != self.height - 1:
+                strprint += '\n'
 
-        return "".join(list1)
+        return "".join(strprint)
 
     def __repr__(self):
         """Representation formal of the instance"""
