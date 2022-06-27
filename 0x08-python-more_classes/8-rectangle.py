@@ -2,11 +2,6 @@
 """define a rectangle class"""
 
 
-from typing import Type
-
-from numpy import rec
-
-
 class Rectangle:
     """define a Rectangle"""
     number_of_instances = 0
