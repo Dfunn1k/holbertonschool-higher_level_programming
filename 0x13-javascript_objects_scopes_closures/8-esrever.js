@@ -3,9 +3,8 @@ exports.esrever = (list) => {
   const newList = [];
   const len = list.length;
   let i;
-  while (i < len) {
+  while (len) {
     newList.push(list.pop());
-    i++;
   }
   return (newList);
 };
