@@ -2,7 +2,7 @@
 const process = require('process');
 const args = process.argv;
 const size = parseInt(args[2]);
-let i; const char = 'x';
+let i; const char = 'X';
 
 if (isNaN(size)) {
   console.log('Missing size');
