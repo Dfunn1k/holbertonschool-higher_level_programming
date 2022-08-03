@@ -5,8 +5,14 @@ class Square extends Rectangle {
     super(size, size);
   }
 
-  charPrint (c = 'X') {
-    this.print(c);
+  charPrint (c) {
+    let i;
+    if (c === undefined) {
+      c = 'X';
+    }
+    for (i = 0; i < this.height; i++) {
+      console.log(c.repeat(this.height));
+    }
   }
 }
 module.exports = Square;
