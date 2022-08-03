@@ -5,6 +5,14 @@ const len = args.length;
 const newArray = [];
 let i = 2;
 
+if (args[2] === undefined) {
+  console.log(0);
+}
+
+if (len === 3) {
+  console.log(0);
+}
+
 while (i < len) {
   newArray.push(args[i]);
   i++;
