@@ -1,1 +1,0 @@
-# objects, scopes ands closures
