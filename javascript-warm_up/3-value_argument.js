@@ -1,9 +1,7 @@
 #!/usr/bin/node
 const { argv } = require('process');
 
-const lengthArguments = argv.length;
-
-if (lengthArguments <= 2) {
+if (argv[2] === undefined) {
   console.log('No argument');
 } else {
   const sliceArrayArguments = argv.slice(2);
