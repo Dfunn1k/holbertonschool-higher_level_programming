@@ -1,5 +1,6 @@
 #!/usr/bin/node
+var myVar = 333;
 
-exports.add = function (a, b) {
-  return (a + b);
-};
+change = function () {
+  return (myVar);
+}
