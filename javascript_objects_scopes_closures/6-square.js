@@ -1,3 +1,4 @@
+#!/usr/bin/node
 const subclass = require('./5-square');
 class Square extends subclass {
   charPrint (c = 'X') {
