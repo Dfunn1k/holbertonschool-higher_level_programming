@@ -1,6 +1,5 @@
 #!/usr/bin/node
 const { dict } = require('./101-data');
-console.log(dict);
 const newDict = {};
 
 for (const key in dict) {
@@ -10,5 +9,4 @@ for (const key in dict) {
     newDict[dict[key]] = [key];
   }
 }
-
 console.log(newDict);
