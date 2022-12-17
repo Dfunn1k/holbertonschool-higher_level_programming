@@ -1,19 +1,23 @@
 #!/usr/bin/node
-const request = require('request');
+const axios = require('axios');
 const { argv } = require('process');
 const id = argv[2];
 const baseUrl = `https://swapi-api.hbtn.io/api/films/${id}`;
 
-request(baseUrl, (error, response, body) => {
-  if (error) { console.error(error); } else {
-    const dataDeserialization1 = JSON.parse(body);
+axios.get(baseUrl)
+  .then((response) => {
+    const dataDeserialization1 = response.data;
     for (const character of dataDeserialization1.characters) {
-      request(character, (error, response, body) => {
-        if (error) { console.error(error); } else {
-          const dataDeserialization2 = JSON.parse(body);
+      axios.get(character)
+        .then((response) => {
+          const dataDeserialization2 = response.data;
           console.log(dataDeserialization2.name);
-        }
-      });
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     }
-  }
-});
+  })
+  .catch((error) => {
+    console.error(error);
+  });
