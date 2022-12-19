@@ -1,13 +1,24 @@
 #!/usr/bin/node
-const { get } = require('axios').default;
-const id = process.argv[2];
+const request = require('request');
+const { argv } = require('process');
+const id = argv[2];
 const baseUrl = `https://swapi-api.hbtn.io/api/films/${id}`;
 
-get(baseUrl)
-  .then(({ data: { characters } }) => {
-    const requests = characters.map(character => get(character));
-    Promise.all(requests)
-      .then((data) => data.forEach(({ data: { name } }) => console.log(name)));
-  })
-  .catch((err) => console.error(err));
-  
+request(baseUrl, (error, response, body) => {
+  if (error) { console.error(error); } else {
+    const dataDeserialization1 = JSON.parse(body);
+
+    const characterPromises = dataDeserialization1.characters.map(character => new Promise((resolve, reject) => {
+      request(character, (error, response, body) => {
+        if (error) { reject(error); } else {
+          const dataDeserialization2 = JSON.parse(body);
+          resolve(dataDeserialization2.name);
+        }
+      });
+    }));
+
+    Promise.all(characterPromises).then(names => {
+      names.forEach(name => console.log(name));
+    }).catch(error => console.error(error));
+  }
+});
