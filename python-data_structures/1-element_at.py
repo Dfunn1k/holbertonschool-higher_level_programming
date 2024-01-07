@@ -4,10 +4,7 @@ def element_at(my_list, idx):
     if idx < 0:
         return None
 
-    if idx - 1 > lenght:
+    if idx > lenght:
         return None
 
-    return my_list[idx - 1]
-
-
-print(element_at(list(range(15)), 1))
+    return my_list[idx]
