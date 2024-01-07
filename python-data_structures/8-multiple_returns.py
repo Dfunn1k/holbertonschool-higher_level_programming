@@ -3,7 +3,7 @@ def multiple_returns(sentence):
     length = len(sentence)
 
     if sentence != '':
-        first_char = sentence[-1]
+        first_char = sentence[0]
     else:
         first_char = None
 
