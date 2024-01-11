@@ -18,7 +18,7 @@ def roman_to_int(roman_string):
     length = len(roman_string)
 
     for i in range(length):
-        if roman_string[i] == roman_string[-1]:
+        if i == length - 1:
             total += number_roman[roman_string[i]]
         elif number_roman[roman_string[i]] < number_roman[roman_string[i + 1]]:
             total -= number_roman[roman_string[i]]
