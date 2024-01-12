@@ -76,10 +76,11 @@ class SinglyLinkedList:
             list_singly.append(head.data)
             head = head.next_node
 
-        for node in list_singly:
-            if node == list_singly[-1]:
-                msg += f'{node}'
+        length = len(list_singly)
+        for i in range(length):
+            if i == length - 1:
+                msg += f'{list_singly[i]}'
             else:
-                msg += f'{node}\n'
+                msg += f'{list_singly[i]}\n'
 
         return msg
