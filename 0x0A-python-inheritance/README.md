@@ -1,1 +1,0 @@
-* about herencia in python
