@@ -4,4 +4,4 @@
 
 def lookup(obj):
     """Function that print attributes and method of an object"""
-    return [x for x in obj.__dict__]
+    return dir(obj)
