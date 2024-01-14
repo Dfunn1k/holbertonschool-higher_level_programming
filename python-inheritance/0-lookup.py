@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This file shows a list of the methods of an object"""
+"""lookup"""
 
 
 def lookup(obj):
