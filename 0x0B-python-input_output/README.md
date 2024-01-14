@@ -1,1 +1,0 @@
-* about input and output
