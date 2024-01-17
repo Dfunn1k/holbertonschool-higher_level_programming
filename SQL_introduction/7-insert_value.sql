@@ -1,2 +1,2 @@
 -- Script that inserts a new row into the table
-INSERT INTO `first_table` (`id`, `name`, `age`) VALUES (NULL, 'John', '25');
+INSERT INTO `first_table` (`id`, `name`) VALUES (89, 'Best School');
