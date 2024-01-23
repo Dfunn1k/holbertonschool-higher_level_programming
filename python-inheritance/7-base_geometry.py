@@ -1,40 +1,21 @@
 #!/usr/bin/python3
-"""Geometry module"""
+"""In this file create a class with method that not implemented"""
 
 
 class BaseGeometry:
+    """class construction in process"""
     def area(self):
-        """
-        Calculates the area of the geometric shape.
-
-        This method should be implemented by subclasses of BaseGeometry.
-
-        Raises
-        ------
-        Exception
-            If the method is not implemented by a subclass.
-        """
+        """Method not is implemented"""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
+        """Public instance method that validates value.
+        Args:
+            * name (str): name of the object.
+            * value (int): data integer.
         """
-        Validates that a value is a positive integer.
-
-        Parameters
-        ----------
-        name : str
-            The name of the value, used in error messages.
-        value : int
-            The value to validate.
-
-        Raises
-        ------
-        TypeError
-            If the value is not an integer.
-        ValueError
-            If the value is not greater than 0.
-        """
-        if type(value) is not int:
+        if not type(value) is int:
             raise TypeError(f"{name} must be an integer")
+
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
