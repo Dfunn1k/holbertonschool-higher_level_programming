@@ -3,14 +3,38 @@
 
 
 class BaseGeometry:
-    """
-    BaseGeometry is a base class for geometric shapes.
-    """
     def area(self):
+        """
+        Calculates the area of the geometric shape.
+
+        This method should be implemented by subclasses of BaseGeometry.
+
+        Raises
+        ------
+        Exception
+            If the method is not implemented by a subclass.
+        """
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        if isinstance(value, int):
-            raise TypeError("<name> must be an integer")
+        """
+        Validates that a value is a positive integer.
+
+        Parameters
+        ----------
+        name : str
+            The name of the value, used in error messages.
+        value : int
+            The value to validate.
+
+        Raises
+        ------
+        TypeError
+            If the value is not an integer.
+        ValueError
+            If the value is not greater than 0.
+        """
+        if not isinstance(value, int):
+            raise TypeError(f"{name} must be an integer")
         if value <= 0:
-            raise ValueError("<name> must be greater than 0")
+            raise ValueError(f"{name} must be greater than 0")
